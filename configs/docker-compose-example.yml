@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Kolkata
+      WEBPASSWORD: changeme
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8080:80"
+    volumes:
+      - ./pihole:/etc/pihole
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+
+volumes:
+  portainer_data:
