@@ -44,3 +44,23 @@ screenshots/   → Dashboard and setup screenshots
 diagrams/      → Infrastructure diagrams
 configs/       → Example configuration files
 monitoring/    → Monitoring stack files
+
+---
+
+# Dashboards & Monitoring
+
+## Pi-hole Monitoring Dashboard
+
+![Pi-hole Dashboard](screenshots/grafana-pihole-dashboard.png)
+
+---
+
+## Node Exporter Monitoring
+
+![Node Exporter Dashboard](screenshots/grafana-node-exporter-dashboard.png)
+
+---
+
+## Attendance Monitoring Dashboard
+
+![Attendance Dashboard](screenshots/grafana-attendance-dashboard.png)
